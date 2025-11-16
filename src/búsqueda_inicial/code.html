@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VetTransparency - Encuentra tu Veterinario Ideal</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#4A90E2", // Professional blue
+            "secondary": "#50E3C2", // Inviting green
+            "background-light": "#f6f8f6", // Mapped from F4F4F4
+            "background-dark": "#102215",
+            "text-light": "#4A4A4A",
+            "text-dark": "#E0E0E0",
+          },
+          fontFamily: {
+            "display": ["Manrope", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.5rem", // Increased for a softer look
+            "lg": "0.75rem",
+            "xl": "1rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      min-height: max(884px, 100dvh);
+    }
+    .custom-range::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 24px;
+        height: 24px;
+        border-radius: 9999px;
+        background: #ffffff;
+        border-width: 4px;
+        cursor: pointer;
+        margin-top: -10px;box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    .dark .custom-range::-webkit-slider-thumb {
+        background: #cbd5e1;}
+    .custom-range::-moz-range-thumb {
+        width: 24px;
+        height: 24px;
+        border-radius: 9999px;
+        background: #ffffff;
+        border-width: 4px;
+        cursor: pointer;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    .dark .custom-range::-moz-range-thumb {
+        background: #cbd5e1;}
+    .custom-range {
+        -webkit-appearance: none;
+        appearance: none;
+        width: 100%;
+        height: 4px;
+        background: transparent;
+        border-radius: 9999px;
+    }
+    .range-track {
+        background: #e5e7eb;height: 4px;
+        border-radius: 9999px;
+        position: absolute;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 0;
+        z-index: -1;
+    }
+    .dark .range-track {
+        background: #1f2937;}
+    .range-progress {
+        background: #4A90E2;height: 4px;
+        border-radius: 9999px;
+    }
+    .dark .range-progress {
+        background: #50E3C2;}
+    .custom-range::-webkit-slider-thumb {
+        border-color: #4A90E2;}
+    .dark .custom-range::-webkit-slider-thumb {
+        border-color: #50E3C2;}
+    .custom-range::-moz-range-thumb {
+        border-color: #4A90E2;}
+    .dark .custom-range::-moz-range-thumb {
+        border-color: #50E3C2;}
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root overflow-x-hidden">
+<header class="flex items-center bg-background-light dark:bg-background-dark p-4 justify-between sticky top-0 z-10">
+<div class="flex-1"></div>
+<h1 class="text-text-light dark:text-text-dark text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center">VetTransparency</h1>
+<div class="flex-1"></div>
+</header>
+<main class="flex flex-1 flex-col px-4 pt-4 pb-8">
+<h2 class="text-text-light dark:text-text-dark tracking-tight text-[32px] font-bold leading-tight text-center pb-8 pt-4">Encuentra y compara veterinarias</h2>
+<div class="space-y-6">
+<section>
+<label class="text-text-light dark:text-text-dark text-lg font-semibold leading-tight tracking-[-0.015em] text-left pb-3 block" for="location">¿Dónde te encuentras?</label>
+<div class="relative">
+<span class="material-symbols-outlined text-gray-400 dark:text-gray-500 absolute left-4 top-1/2 -translate-y-1/2">location_on</span>
+<input class="w-full h-14 pl-12 pr-4 rounded-lg border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-text-light dark:text-text-dark placeholder-gray-400 dark:placeholder-gray-500 focus:ring-2 focus:ring-primary dark:focus:ring-secondary focus:border-transparent outline-none transition-all duration-200" id="location" placeholder="Ciudad, Código Postal" type="text"/>
+</div>
+</section>
+<section>
+<h3 class="text-text-light dark:text-text-dark text-lg font-semibold leading-tight tracking-[-0.015em] text-left pb-3">¿Qué tipo de mascota tienes?</h3>
+<div class="flex h-12 flex-1 items-center justify-center rounded-lg bg-gray-200 dark:bg-gray-800 p-1">
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-[0_1px_3px_rgba(0,0,0,0.1)] has-[:checked]:text-primary dark:has-[:checked]:text-secondary text-gray-500 dark:text-gray-400 text-sm font-semibold leading-normal transition-all duration-200">
+<input checked="" class="sr-only" name="pet-type" type="radio" value="Dog"/>
+<span class="material-symbols-outlined mr-2 text-xl">pets</span>
+<span class="truncate">Perro</span>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-[0_1px_3px_rgba(0,0,0,0.1)] has-[:checked]:text-primary dark:has-[:checked]:text-secondary text-gray-500 dark:text-gray-400 text-sm font-semibold leading-normal transition-all duration-200">
+<input class="sr-only" name="pet-type" type="radio" value="Cat"/>
+<span class="material-symbols-outlined mr-2 text-xl">pets</span>
+<span class="truncate">Gato</span>
+</label>
+<label class="flex cursor-pointer h-full grow items-center justify-center overflow-hidden rounded-lg px-2 has-[:checked]:bg-white dark:has-[:checked]:bg-gray-700 has-[:checked]:shadow-[0_1px_3px_rgba(0,0,0,0.1)] has-[:checked]:text-primary dark:has-[:checked]:text-secondary text-gray-500 dark:text-gray-400 text-sm font-semibold leading-normal transition-all duration-200">
+<input class="sr-only" name="pet-type" type="radio" value="Exotic"/>
+<span class="material-symbols-outlined mr-2 text-xl">egg</span>
+<span class="truncate">Exótico</span>
+</label>
+</div>
+</section>
+<section>
+<div class="flex w-full items-center justify-between pb-3">
+<h3 class="text-text-light dark:text-text-dark text-lg font-semibold leading-tight tracking-[-0.015em]">¿Cuál es tu presupuesto?</h3>
+<p class="text-text-light dark:text-text-dark text-lg font-bold leading-normal">$$</p>
+</div>
+<div class="relative h-4 w-full">
+<div class="range-track"></div>
+<div class="range-progress" style="width: 50%;"></div>
+<input class="custom-range absolute top-1/2 -translate-y-1/2 m-0 bg-transparent" max="3" min="1" type="range" value="2"/>
+</div>
+<div class="w-full flex justify-between text-sm text-gray-500 dark:text-gray-400 mt-1">
+<span>$</span>
+<span>$$$</span>
+</div>
+</section>
+</div>
+<div class="flex-grow"></div>
+<div class="mt-auto pt-8">
+<button class="w-full bg-primary text-white font-bold py-4 px-4 rounded-xl shadow-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 transition-all duration-200 text-lg">
+      Ver mis coincidencias
+    </button>
+</div>
+</main>
+</div>
+
+</body></html>
