@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Filtros Avanzados - VetTransparency</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13ec49",
+            "background-light": "#f6f8f6",
+            "background-dark": "#102215",
+            "text-light": "#111813",
+            "text-dark": "#e1e4e2",
+            "surface-light": "#ffffff",
+            "surface-dark": "#182c1e",
+            "border-light": "#dbe6de",
+            "border-dark": "#2a3f30",
+          },
+          fontFamily: {
+            "display": ["Manrope", "sans-serif"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-text-light dark:text-text-dark">
+<div class="relative flex min-h-screen w-full flex-col group/design-root">
+<!-- Top App Bar -->
+<header class="sticky top-0 z-10 flex items-center justify-between border-b border-border-light dark:border-border-dark bg-surface-light dark:bg-surface-dark px-4 py-3">
+<button class="flex size-10 items-center justify-center text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined text-2xl">close</span>
+</button>
+<h1 class="flex-1 text-center text-lg font-bold leading-tight tracking-[-0.015em] text-text-light dark:text-text-dark">Filtros Avanzados</h1>
+<button class="w-16 text-right text-base font-bold leading-normal tracking-[0.015em] text-primary">Limpiar</button>
+</header>
+<main class="flex-1 overflow-y-auto pb-28">
+<!-- Section: Búsqueda General -->
+<section>
+<h2 class="px-4 pb-2 pt-6 text-lg font-bold leading-tight tracking-[-0.015em] text-text-light dark:text-text-dark">Búsqueda General</h2>
+<div class="space-y-4 bg-surface-light dark:bg-surface-dark px-4 py-4">
+<div class="@container">
+<div class="relative flex w-full flex-col items-start justify-between gap-3">
+<div class="flex w-full shrink-[3] items-center justify-between">
+<p class="text-base font-medium leading-normal text-text-light dark:text-text-dark">Distancia</p>
+<p class="text-sm font-normal leading-normal text-text-light dark:text-text-dark">10 km</p>
+</div>
+<div class="flex h-4 w-full items-center gap-4">
+<div class="flex h-1.5 flex-1 rounded-full bg-border-light dark:bg-border-dark">
+<div class="h-full w-[32%] rounded-full bg-primary"></div>
+<div class="relative">
+<div class="absolute -left-2.5 -top-2 size-5 rounded-full border-2 border-surface-light dark:border-surface-dark bg-primary ring-2 ring-primary"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="h-px bg-border-light dark:bg-border-dark"></div>
+<div class="flex items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="flex size-10 shrink-0 items-center justify-center rounded-lg bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined">star</span>
+</div>
+<p class="flex-1 truncate text-base font-normal leading-normal text-text-light dark:text-text-dark">Valoración</p>
+</div>
+<div class="flex shrink-0 items-center gap-2">
+<p class="text-base font-normal leading-normal text-text-light dark:text-text-dark">Cualquiera</p>
+<span class="material-symbols-outlined text-xl text-text-light/70 dark:text-text-dark/70">arrow_forward_ios</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Section: Para tu Mascota -->
+<section>
+<h2 class="px-4 pb-2 pt-6 text-lg font-bold leading-tight tracking-[-0.015em] text-text-light dark:text-text-dark">Para tu Mascota</h2>
+<div class="bg-surface-light dark:bg-surface-dark px-4 py-4">
+<div class="flex flex-wrap gap-3">
+<button class="flex items-center gap-2 rounded-full border border-primary bg-primary/20 px-4 py-2 text-sm font-medium text-text-light dark:text-text-dark">
+<span class="material-symbols-outlined text-base">check</span>
+              Menos estresante para gatos
+            </button>
+<button class="flex items-center gap-2 rounded-full border border-border-light dark:border-border-dark bg-transparent px-4 py-2 text-sm font-medium text-text-light dark:text-text-dark">
+              Ideal para perros nerviosos
+            </button>
+<button class="flex items-center gap-2 rounded-full border border-border-light dark:border-border-dark bg-transparent px-4 py-2 text-sm font-medium text-text-light dark:text-text-dark">
+              Trato cálido y cercano
+            </button>
+<button class="flex items-center gap-2 rounded-full border border-border-light dark:border-border-dark bg-transparent px-4 py-2 text-sm font-medium text-text-light dark:text-text-dark">
+              Bueno con mascotas exóticas
+            </button>
+</div>
+</div>
+</section>
+<!-- Section: Servicios y Especialidades -->
+<section>
+<h2 class="px-4 pb-2 pt-6 text-lg font-bold leading-tight tracking-[-0.015em] text-text-light dark:text-text-dark">Servicios y Especialidades</h2>
+<div class="bg-surface-light dark:bg-surface-dark">
+<div class="flex items-center justify-between gap-4 px-4 py-3.5">
+<p class="text-base font-normal leading-normal text-text-light dark:text-text-dark">Urgencias 24h</p>
+<input checked="" class="h-6 w-6 rounded border-2 border-border-light dark:border-border-dark bg-transparent text-primary focus:ring-primary/50 focus:ring-offset-0 focus:ring-2" type="checkbox"/>
+</div>
+<div class="mx-4 h-px bg-border-light dark:bg-border-dark"></div>
+<div class="flex items-center justify-between gap-4 px-4 py-3.5">
+<p class="text-base font-normal leading-normal text-text-light dark:text-text-dark">Vacunación</p>
+<input class="h-6 w-6 rounded border-2 border-border-light dark:border-border-dark bg-transparent text-primary focus:ring-primary/50 focus:ring-offset-0 focus:ring-2" type="checkbox"/>
+</div>
+<div class="mx-4 h-px bg-border-light dark:bg-border-dark"></div>
+<div class="flex items-center justify-between gap-4 px-4 py-3.5">
+<p class="text-base font-normal leading-normal text-text-light dark:text-text-dark">Cirugía</p>
+<input checked="" class="h-6 w-6 rounded border-2 border-border-light dark:border-border-dark bg-transparent text-primary focus:ring-primary/50 focus:ring-offset-0 focus:ring-2" type="checkbox"/>
+</div>
+<div class="mx-4 h-px bg-border-light dark:bg-border-dark"></div>
+<div class="flex items-center justify-between gap-4 px-4 py-3.5">
+<p class="text-base font-normal leading-normal text-text-light dark:text-text-dark">Laboratorio</p>
+<input class="h-6 w-6 rounded border-2 border-border-light dark:border-border-dark bg-transparent text-primary focus:ring-primary/50 focus:ring-offset-0 focus:ring-2" type="checkbox"/>
+</div>
+</div>
+</section>
+<!-- Section: Conveniencia -->
+<section>
+<h2 class="px-4 pb-2 pt-6 text-lg font-bold leading-tight tracking-[-0.015em] text-text-light dark:text-text-dark">Conveniencia</h2>
+<div class="bg-surface-light dark:bg-surface-dark">
+<div class="flex items-center justify-between gap-4 px-4 py-3.5">
+<p class="text-base font-normal leading-normal text-text-light dark:text-text-dark">Acepta nuevos pacientes</p>
+<button aria-checked="true" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" role="switch">
+<span class="pointer-events-none inline-block h-5 w-5 translate-x-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+<div class="mx-4 h-px bg-border-light dark:bg-border-dark"></div>
+<div class="flex items-center justify-between gap-4 px-4 py-3.5">
+<p class="text-base font-normal leading-normal text-text-light dark:text-text-dark">Tiene parking</p>
+<button aria-checked="false" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-gray-200 dark:bg-gray-600 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" role="switch">
+<span class="pointer-events-none inline-block h-5 w-5 translate-x-0 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+<div class="mx-4 h-px bg-border-light dark:bg-border-dark"></div>
+<div class="flex items-center justify-between gap-4 px-4 py-3.5">
+<p class="text-base font-normal leading-normal text-text-light dark:text-text-dark">Cita online</p>
+<button aria-checked="true" class="relative inline-flex h-6 w-11 flex-shrink-0 cursor-pointer rounded-full border-2 border-transparent bg-primary transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2" role="switch">
+<span class="pointer-events-none inline-block h-5 w-5 translate-x-5 transform rounded-full bg-white shadow ring-0 transition duration-200 ease-in-out"></span>
+</button>
+</div>
+</div>
+</section>
+</main>
+<!-- Floating Action Button -->
+<footer class="fixed bottom-0 left-0 right-0 z-10 bg-surface-light/80 dark:bg-surface-dark/80 p-4 backdrop-blur-sm">
+<button class="flex h-12 w-full items-center justify-center rounded-xl bg-primary px-6 text-base font-bold text-background-dark">
+        Aplicar Filtros (4)
+      </button>
+</footer>
+</div>
+</body></html>
