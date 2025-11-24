@@ -84,6 +84,46 @@ export const reseñas: Record<string, Reseña[]> = {
       tags: ['Felinos', 'Ambiente tranquilo', 'Trato amable'],
       fecha: '2024-03-15T10:00:00Z',
       fechaVisita: '15/03/2024'
+    },
+    {
+      id: 'rev-7',
+      autor: {
+        nombre: 'Roberto K.',
+        avatar: 'RK'
+      },
+      verificada: true,
+      rating: 5,
+      texto: 'Excelente experiencia. Llevé a mi perro para una cirugía y todo salió perfecto. El equipo es muy profesional y se nota que aman lo que hacen.',
+      tags: ['Caninos', 'Cirugía', 'Profesionalismo'],
+      fecha: '2024-03-20T10:00:00Z',
+      fechaVisita: '20/03/2024',
+      imagen: 'perro-recuperacion.jpg'
+    },
+    {
+      id: 'rev-8',
+      autor: {
+        nombre: 'Sofía T.',
+        avatar: 'ST'
+      },
+      verificada: true,
+      rating: 4,
+      texto: 'Muy buena atención y precios razonables. Mi conejo fue atendido rápidamente en una urgencia. Solo mejoraría el tiempo de espera.',
+      tags: ['Urgencias', 'Exóticos', 'Económico'],
+      fecha: '2024-03-18T10:00:00Z',
+      fechaVisita: '18/03/2024'
+    },
+    {
+      id: 'rev-9',
+      autor: {
+        nombre: 'Martín D.',
+        avatar: 'MD'
+      },
+      verificada: true,
+      rating: 5,
+      texto: 'Increíble el nivel de detalle en el diagnóstico. Me explicaron todo paso a paso y mi gato está completamente recuperado. Los recomiendo al 100%.',
+      tags: ['Felinos', 'Consulta', 'Diagnóstico certero'],
+      fecha: '2024-03-12T10:00:00Z',
+      fechaVisita: '12/03/2024'
     }
   ],
   'salud-animal-sur': [

@@ -34,25 +34,28 @@ export default function Filtros() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100">
+    <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <div className="bg-white p-4 border-b">
-        <div className="flex items-center justify-center mb-3">
-          <img
-            src="/logo.png"
-            alt="VetTransparency"
-            className="h-10 w-auto"
-          />
-        </div>
-        <div className="flex items-center justify-between">
-          <button onClick={() => navigate('/')} className="text-2xl">✕</button>
-          <h1 className="text-base font-semibold">Personaliza tu búsqueda</h1>
-          <button className="text-verde-principal font-medium text-sm">Limpiar</button>
+      <div className="bg-white p-4 border-b border-gray-200">
+        <div className="flex items-center justify-between max-w-2xl mx-auto">
+          <button 
+            onClick={() => navigate('/')} 
+            className="flex items-center justify-center w-8 h-8 rounded-full hover:bg-gray-100 transition-colors"
+          >
+            <span className="text-xl text-gray-700">✕</span>
+          </button>
+          <h1 className="text-base font-semibold text-gray-900">Personalizá tu búsqueda</h1>
+          <button 
+            className="text-sm font-medium"
+            style={{ color: '#52C41A' }}
+          >
+            Limpiar
+          </button>
         </div>
       </div>
 
       {/* Content */}
-      <div className="p-6 space-y-6 pb-24">
+      <div className="p-6 space-y-6 pb-24 max-w-2xl mx-auto">
         {/* Filtros básicos */}
         <div>
           <h2 className="text-sm font-semibold text-gray-700 mb-4">Filtros básicos</h2>
@@ -60,8 +63,8 @@ export default function Filtros() {
           {/* Distancia */}
           <div className="mb-6">
             <div className="flex justify-between mb-2">
-              <label className="text-sm font-medium text-gray-700">Distancia</label>
-              <span className="text-sm font-medium text-gray-700">{distancia}km</span>
+              <label className="text-sm font-medium text-gray-900">Distancia</label>
+              <span className="text-sm font-medium text-gray-900">{distancia}km</span>
             </div>
             <input
               type="range"
@@ -69,13 +72,16 @@ export default function Filtros() {
               max="10"
               value={distancia}
               onChange={(e) => setDistancia(Number(e.target.value))}
-              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-verde-principal"
+              style={{
+                accentColor: '#52C41A'
+              }}
+              className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer"
             />
           </div>
 
           {/* Precio */}
           <div className="mb-6">
-            <label className="text-sm font-medium text-gray-700 block mb-3">Precio</label>
+            <label className="text-sm font-medium text-gray-900 block mb-3">Precio</label>
             <div className="flex gap-2">
               <Chip 
                 selected={precio === 'Económico'} 
@@ -100,7 +106,7 @@ export default function Filtros() {
 
           {/* Servicios */}
           <div className="mb-6">
-            <label className="text-sm font-medium text-gray-700 block mb-3">Servicios</label>
+            <label className="text-sm font-medium text-gray-900 block mb-3">Servicios</label>
             <div className="flex flex-wrap gap-2">
               <Chip 
                 selected={servicios.includes('Consulta')} 
@@ -135,72 +141,88 @@ export default function Filtros() {
 
         {/* Ambiente y trato */}
         <div>
-          <h2 className="text-sm font-semibold text-gray-700 mb-4">Ambiente y trato</h2>
+          <h2 className="text-sm font-semibold text-gray-900 mb-4">Ambiente y trato</h2>
           <div className="space-y-3">
-            <label className="flex items-center justify-between p-3 bg-white rounded-lg cursor-pointer">
+            <label 
+              className="flex items-center justify-between p-3 bg-verde-claro rounded-lg cursor-pointer"
+              onClick={() => toggleFiltroEmocional('idealGatos')}
+            >
               <div className="flex items-center gap-3">
                 <span className="text-xl">🐱</span>
-                <span className="text-sm font-medium text-gray-700">Ideal para gatos</span>
+                <span className="text-sm font-medium text-gray-900">Ideal para gatos</span>
               </div>
-              <input
-                type="checkbox"
-                checked={filtrosEmocionales.idealGatos}
-                onChange={() => toggleFiltroEmocional('idealGatos')}
-                className="w-5 h-5 rounded accent-verde-principal"
-              />
+              <div className="flex items-center justify-center w-6 h-6 rounded-full" style={{ backgroundColor: '#52C41A' }}>
+                {filtrosEmocionales.idealGatos && (
+                  <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                  </svg>
+                )}
+              </div>
             </label>
 
-            <label className="flex items-center justify-between p-3 bg-white rounded-lg cursor-pointer">
+            <label 
+              className="flex items-center justify-between p-3 bg-white rounded-lg cursor-pointer"
+              onClick={() => toggleFiltroEmocional('menosEstresante')}
+            >
               <div className="flex items-center gap-3">
                 <span className="text-xl">💚</span>
-                <span className="text-sm font-medium text-gray-700">Menos estresante</span>
+                <span className="text-sm font-medium text-gray-900">Menos estresante</span>
               </div>
-              <input
-                type="checkbox"
-                checked={filtrosEmocionales.menosEstresante}
-                onChange={() => toggleFiltroEmocional('menosEstresante')}
-                className="w-5 h-5 rounded accent-verde-principal"
-              />
+              <div className="flex items-center justify-center w-6 h-6 rounded-full border-2" style={{ borderColor: filtrosEmocionales.menosEstresante ? '#52C41A' : '#E5E7EB', backgroundColor: filtrosEmocionales.menosEstresante ? '#52C41A' : 'transparent' }}>
+                {filtrosEmocionales.menosEstresante && (
+                  <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                  </svg>
+                )}
+              </div>
             </label>
 
-            <label className="flex items-center justify-between p-3 bg-white rounded-lg cursor-pointer">
+            <label 
+              className="flex items-center justify-between p-3 bg-verde-claro rounded-lg cursor-pointer"
+              onClick={() => toggleFiltroEmocional('tratoCálido')}
+            >
               <div className="flex items-center gap-3">
                 <span className="text-xl">🤝</span>
-                <span className="text-sm font-medium text-gray-700">Trato cálido</span>
+                <span className="text-sm font-medium text-gray-900">Trato cálido</span>
               </div>
-              <input
-                type="checkbox"
-                checked={filtrosEmocionales.tratoCálido}
-                onChange={() => toggleFiltroEmocional('tratoCálido')}
-                className="w-5 h-5 rounded accent-verde-principal"
-              />
+              <div className="flex items-center justify-center w-6 h-6 rounded-full" style={{ backgroundColor: '#52C41A' }}>
+                {filtrosEmocionales.tratoCálido && (
+                  <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                  </svg>
+                )}
+              </div>
             </label>
 
-            <label className="flex items-center justify-between p-3 bg-white rounded-lg cursor-pointer">
+            <label 
+              className="flex items-center justify-between p-3 bg-verde-claro rounded-lg cursor-pointer"
+              onClick={() => toggleFiltroEmocional('ambienteTranquilo')}
+            >
               <div className="flex items-center gap-3">
                 <span className="text-xl">🌿</span>
-                <span className="text-sm font-medium text-gray-700">Ambiente tranquilo</span>
+                <span className="text-sm font-medium text-gray-900">Ambiente tranquilo</span>
               </div>
-              <input
-                type="checkbox"
-                checked={filtrosEmocionales.ambienteTranquilo}
-                onChange={() => toggleFiltroEmocional('ambienteTranquilo')}
-                className="w-5 h-5 rounded accent-verde-principal"
-              />
+              <div className="flex items-center justify-center w-6 h-6 rounded-full" style={{ backgroundColor: '#52C41A' }}>
+                {filtrosEmocionales.ambienteTranquilo && (
+                  <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                  </svg>
+                )}
+              </div>
             </label>
           </div>
         </div>
       </div>
 
       {/* Footer Button */}
-      <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t">
+      <div className="fixed bottom-0 left-0 right-0 p-4 bg-white border-t border-gray-200">
         <button
           onClick={() => navigate('/comparador')}
-          style={{ backgroundColor: '#FF9500' }}
-          className="w-full h-14 px-6 rounded-lg hover:bg-naranja-claro 
-                   text-white font-semibold text-base transition-colors"
+          style={{ backgroundColor: '#52C41A' }}
+          className="w-full h-14 px-6 rounded-lg hover:opacity-90
+                   text-white font-semibold text-base transition-opacity"
         >
-          Buscar veterinarias ({contarFiltrosActivos()})
+          Aplicar filtros ({contarFiltrosActivos()})
         </button>
       </div>
     </div>

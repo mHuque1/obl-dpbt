@@ -16,11 +16,12 @@ export default function Chip({
   return (
     <button
       onClick={onClick}
+      style={selected ? { backgroundColor: '#52C41A' } : {}}
       className={`
         px-4 py-2 rounded-full text-sm font-medium
         transition-all duration-200
         ${selected 
-          ? 'bg-verde-principal text-white' 
+          ? 'text-white' 
           : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
         }
         ${className}
