@@ -98,7 +98,7 @@ export default function Reseñas() {
                 type="checkbox"
                 checked={soloVerificadas}
                 onChange={(e) => setSoloVerificadas(e.target.checked)}
-                className="sr-only peer"
+                className="sr-only"
               />
               <div 
                 className="w-full h-full rounded-full transition-colors"
@@ -114,6 +114,9 @@ export default function Reseñas() {
 
         {/* Lista de reseñas */}
         <div className="px-4 pt-4 pb-6 space-y-4">
+          <p className="text-sm text-gray-500">
+            Mostrando {reseñasMostrar.length} reseñas
+          </p>
           {reseñasMostrar.map((reseña) => (
             <div key={reseña.id} className="bg-white border border-gray-200 rounded-xl p-4 shadow-sm">
               {/* Header de la reseña */}
@@ -179,7 +182,10 @@ export default function Reseñas() {
 
               {/* Fecha */}
               <div className="flex items-center justify-between text-xs">
-                <span className="text-gray-500">Visita confirmada: {reseña.fechaVisita}</span>
+                <span className="text-gray-500">
+                  {reseña.verificada ? 'Visita confirmada: ' : 'Fecha de visita: '}
+                  {reseña.fechaVisita}
+                </span>
                 {reseña.imagen && (
                   <button className="text-gray-400 hover:text-gray-600">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">

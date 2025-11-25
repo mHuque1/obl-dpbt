@@ -41,6 +41,19 @@ export const reseñas: Record<string, Reseña[]> = {
       fecha: '2024-01-12T10:00:00Z',
       fechaVisita: '12/01/2024',
       imagen: 'perro-feliz.jpg'
+    },
+    {
+      id: 'rev-nv-1',
+      autor: {
+        nombre: 'Usuario Google',
+        avatar: 'UG'
+      },
+      verificada: false,
+      rating: 3,
+      texto: 'La atención fue buena pero tuve que esperar mucho tiempo a pesar de tener hora agendada.',
+      tags: ['Espera', 'Atención'],
+      fecha: '2024-02-15T14:30:00Z',
+      fechaVisita: '15/02/2024'
     }
   ],
   'vet-care-central': [
@@ -69,6 +82,19 @@ export const reseñas: Record<string, Reseña[]> = {
       tags: ['Caninos', 'Urgencias', 'Profesionalismo'],
       fecha: '2024-02-28T10:00:00Z',
       fechaVisita: '28/02/2024'
+    },
+    {
+      id: 'rev-nv-2',
+      autor: {
+        nombre: 'Juan R.',
+        avatar: 'JR'
+      },
+      verificada: false,
+      rating: 4,
+      texto: 'Buenos profesionales, aunque el local es un poco pequeño.',
+      tags: ['Instalaciones'],
+      fecha: '2024-01-20T09:15:00Z',
+      fechaVisita: '20/01/2024'
     }
   ],
   'patitas-felices': [
@@ -124,6 +150,32 @@ export const reseñas: Record<string, Reseña[]> = {
       tags: ['Felinos', 'Consulta', 'Diagnóstico certero'],
       fecha: '2024-03-12T10:00:00Z',
       fechaVisita: '12/03/2024'
+    },
+    {
+      id: 'rev-nv-3',
+      autor: {
+        nombre: 'Lucía B.',
+        avatar: 'LB'
+      },
+      verificada: false,
+      rating: 5,
+      texto: 'Siempre traigo a mis mascotas aquí, nunca he tenido un problema. Son los mejores.',
+      tags: ['Confianza', 'Trayectoria'],
+      fecha: '2024-03-01T11:20:00Z',
+      fechaVisita: '01/03/2024'
+    },
+    {
+      id: 'rev-nv-4',
+      autor: {
+        nombre: 'Anonimo',
+        avatar: 'AN'
+      },
+      verificada: false,
+      rating: 2,
+      texto: 'No me gustó el trato de la recepcionista, aunque los veterinarios son buenos.',
+      tags: ['Recepción', 'Trato'],
+      fecha: '2024-02-10T16:45:00Z',
+      fechaVisita: '10/02/2024'
     }
   ],
   'salud-animal-sur': [
@@ -139,6 +191,19 @@ export const reseñas: Record<string, Reseña[]> = {
       tags: ['Consulta', 'Económico'],
       fecha: '2024-03-05T10:00:00Z',
       fechaVisita: '05/03/2024'
+    },
+    {
+      id: 'rev-nv-5',
+      autor: {
+        nombre: 'Carlos V.',
+        avatar: 'CV'
+      },
+      verificada: false,
+      rating: 5,
+      texto: 'Muy buena atención, precios accesibles.',
+      tags: ['Precio', 'Atención'],
+      fecha: '2024-02-25T10:30:00Z',
+      fechaVisita: '25/02/2024'
     }
   ]
 };
