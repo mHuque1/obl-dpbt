@@ -1,5 +1,20 @@
 import { useNavigate } from 'react-router-dom';
 
+const barrios = [
+  "Pocitos",
+  "Cordón",
+  "Unión",
+  "Buceo",
+  "Prado",
+  "Casavalle",
+  "Peñarol",
+  "Centro",
+  "Cerro",
+  "Malvin",
+  "Parque Batlle",
+  "Tres Cruces"
+];
+
 export default function Inicio() {
   const navigate = useNavigate();
 
@@ -33,18 +48,22 @@ export default function Inicio() {
         {/* Barra de búsqueda */}
         <div className="w-full mb-4">
           <div className="relative w-full">
-            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600 text-xl">
-              🔍
-            </span>
-            <input
-              type="text"
-              placeholder="Buscar por zona o barrio"
-              className="w-full h-14 pl-12 pr-12 rounded-lg border-2 border-gray-400 
-                       focus:border-verde-principal focus:outline-none text-base text-gray-800
-                       placeholder:text-gray-500"
-            />
-            <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 text-xl">
+            <span className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-600 text-xl pointer-events-none">
               📍
+            </span>
+            <select
+              className="w-full h-14 pl-12 pr-12 rounded-lg border-2 border-gray-400 
+                       focus:border-verde-principal focus:outline-none text-lg text-gray-800
+                       appearance-none bg-white cursor-pointer"
+              defaultValue=""
+            >
+              <option value="" disabled>Buscar por zona o barrio</option>
+              {barrios.map((barrio) => (
+                <option key={barrio} value={barrio}>{barrio}</option>
+              ))}
+            </select>
+            <span className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-600 text-xl pointer-events-none">
+              ▼
             </span>
           </div>
         </div>
@@ -69,7 +88,8 @@ export default function Inicio() {
           </p>
           <button
             onClick={() => navigate('/filtros')}
-            className="w-full h-14 px-6 rounded-lg bg-verde-principal hover:bg-verde-hover 
+            style={{ backgroundColor: '#FF9500' }}
+            className="w-full h-14 px-6 rounded-lg hover:bg-naranja-claro 
                      text-white font-semibold text-base transition-colors"
           >
             Hacé el match
