@@ -29,8 +29,21 @@ export default function Filtros() {
     }));
   };
 
+  const limpiarFiltros = () => {
+    setDistancia(5);
+    setPrecio('Moderado');
+    setServicios([]);
+    setFiltrosEmocionales({
+      idealGatos: false,
+      menosEstresante: false,
+      tratoCálido: false,
+      ambienteTranquilo: false
+    });
+  };
+
   const contarFiltrosActivos = () => {
-    return servicios.length + Object.values(filtrosEmocionales).filter(Boolean).length;
+    // 1 por el precio (siempre seleccionado) + servicios + filtros emocionales
+    return 1 + servicios.length + Object.values(filtrosEmocionales).filter(Boolean).length;
   };
 
   return (
@@ -46,6 +59,7 @@ export default function Filtros() {
           </button>
           <h1 className="text-base font-semibold text-gray-900">Personalizá tu búsqueda</h1>
           <button 
+            onClick={limpiarFiltros}
             className="text-sm font-medium"
             style={{ color: '#52C41A' }}
           >
@@ -144,14 +158,20 @@ export default function Filtros() {
           <h2 className="text-sm font-semibold text-gray-900 mb-4">Ambiente y trato</h2>
           <div className="space-y-3">
             <label 
-              className="flex items-center justify-between p-3 bg-verde-claro rounded-lg cursor-pointer"
+              className={`flex items-center justify-between p-3 rounded-lg cursor-pointer ${filtrosEmocionales.idealGatos ? 'bg-verde-claro' : 'bg-white'}`}
               onClick={() => toggleFiltroEmocional('idealGatos')}
             >
               <div className="flex items-center gap-3">
                 <span className="text-xl">🐱</span>
                 <span className="text-sm font-medium text-gray-900">Ideal para gatos</span>
               </div>
-              <div className="flex items-center justify-center w-6 h-6 rounded-full" style={{ backgroundColor: '#52C41A' }}>
+              <div 
+                className="flex items-center justify-center w-6 h-6 rounded-full border-2" 
+                style={{ 
+                  borderColor: filtrosEmocionales.idealGatos ? '#52C41A' : '#E5E7EB', 
+                  backgroundColor: filtrosEmocionales.idealGatos ? '#52C41A' : 'transparent' 
+                }}
+              >
                 {filtrosEmocionales.idealGatos && (
                   <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
@@ -161,14 +181,20 @@ export default function Filtros() {
             </label>
 
             <label 
-              className="flex items-center justify-between p-3 bg-white rounded-lg cursor-pointer"
+              className={`flex items-center justify-between p-3 rounded-lg cursor-pointer ${filtrosEmocionales.menosEstresante ? 'bg-verde-claro' : 'bg-white'}`}
               onClick={() => toggleFiltroEmocional('menosEstresante')}
             >
               <div className="flex items-center gap-3">
                 <span className="text-xl">💚</span>
                 <span className="text-sm font-medium text-gray-900">Menos estresante</span>
               </div>
-              <div className="flex items-center justify-center w-6 h-6 rounded-full border-2" style={{ borderColor: filtrosEmocionales.menosEstresante ? '#52C41A' : '#E5E7EB', backgroundColor: filtrosEmocionales.menosEstresante ? '#52C41A' : 'transparent' }}>
+              <div 
+                className="flex items-center justify-center w-6 h-6 rounded-full border-2" 
+                style={{ 
+                  borderColor: filtrosEmocionales.menosEstresante ? '#52C41A' : '#E5E7EB', 
+                  backgroundColor: filtrosEmocionales.menosEstresante ? '#52C41A' : 'transparent' 
+                }}
+              >
                 {filtrosEmocionales.menosEstresante && (
                   <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
@@ -178,14 +204,20 @@ export default function Filtros() {
             </label>
 
             <label 
-              className="flex items-center justify-between p-3 bg-verde-claro rounded-lg cursor-pointer"
+              className={`flex items-center justify-between p-3 rounded-lg cursor-pointer ${filtrosEmocionales.tratoCálido ? 'bg-verde-claro' : 'bg-white'}`}
               onClick={() => toggleFiltroEmocional('tratoCálido')}
             >
               <div className="flex items-center gap-3">
                 <span className="text-xl">🤝</span>
                 <span className="text-sm font-medium text-gray-900">Trato cálido</span>
               </div>
-              <div className="flex items-center justify-center w-6 h-6 rounded-full" style={{ backgroundColor: '#52C41A' }}>
+              <div 
+                className="flex items-center justify-center w-6 h-6 rounded-full border-2" 
+                style={{ 
+                  borderColor: filtrosEmocionales.tratoCálido ? '#52C41A' : '#E5E7EB', 
+                  backgroundColor: filtrosEmocionales.tratoCálido ? '#52C41A' : 'transparent' 
+                }}
+              >
                 {filtrosEmocionales.tratoCálido && (
                   <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
@@ -195,14 +227,20 @@ export default function Filtros() {
             </label>
 
             <label 
-              className="flex items-center justify-between p-3 bg-verde-claro rounded-lg cursor-pointer"
+              className={`flex items-center justify-between p-3 rounded-lg cursor-pointer ${filtrosEmocionales.ambienteTranquilo ? 'bg-verde-claro' : 'bg-white'}`}
               onClick={() => toggleFiltroEmocional('ambienteTranquilo')}
             >
               <div className="flex items-center gap-3">
                 <span className="text-xl">🌿</span>
                 <span className="text-sm font-medium text-gray-900">Ambiente tranquilo</span>
               </div>
-              <div className="flex items-center justify-center w-6 h-6 rounded-full" style={{ backgroundColor: '#52C41A' }}>
+              <div 
+                className="flex items-center justify-center w-6 h-6 rounded-full border-2" 
+                style={{ 
+                  borderColor: filtrosEmocionales.ambienteTranquilo ? '#52C41A' : '#E5E7EB', 
+                  backgroundColor: filtrosEmocionales.ambienteTranquilo ? '#52C41A' : 'transparent' 
+                }}
+              >
                 {filtrosEmocionales.ambienteTranquilo && (
                   <svg className="w-4 h-4 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
