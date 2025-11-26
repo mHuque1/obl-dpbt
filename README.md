@@ -36,23 +36,4 @@ La aplicación estará disponible en [http://localhost:5173](http://localhost:51
 
 - `npm run dev` - Inicia el servidor de desarrollo
 - `npm run build` - Compila el proyecto para producción
-- `npm run preview` - Previsualiza la versión de producción
-- `npm run lint` - Ejecuta el linter para verificar el código
 
-## Tecnologías utilizadas
-
-- **React 19** - Framework de UI
-- **TypeScript** - Tipado estático
-- **Vite** - Herramienta de desarrollo y build
-- **Tailwind CSS** - Framework de estilos
-- **React Router** - Navegación entre páginas
-
-## Estructura del proyecto
-
-```
-src/
-├── components/     # Componentes reutilizables
-├── pages/          # Páginas de la aplicación
-├── data/           # Datos estáticos (clínicas, reseñas)
-└── assets/         # Recursos estáticos
-```
